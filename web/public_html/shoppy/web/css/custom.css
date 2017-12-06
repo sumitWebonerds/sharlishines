@@ -1,0 +1,19 @@
+.inner-block {
+    padding: 5em 2em 4em 2em;
+    background: #fafafa;
+}
+.logo-name {
+    float: left;
+    width: 40%;
+    margin: 0% 3% 0% 2%;
+}
+
+.logo-name {
+    float: left;
+    width: 50%;
+    margin: 0% 3% 0% 2%;
+}
+canvas#bar {
+    width: 100% !important;
+    height: 300px !important;
+}

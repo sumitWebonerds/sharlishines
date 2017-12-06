@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-navbar sharli>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sharlishines</ion-title>
+    <ion-buttons end>
+        <button id="notification-button" ion-button icon-only>
+            <ion-icon name="cart"><ion-badge id="notifications-badge" color="secondary">5</ion-badge> </ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides *ngIf="slidersList && slidersList.length"  pager autoplay="5000" loop="true"> 
+    <ion-slide *ngFor="let slider of slidersList">
+      <img src="{{IMG_URL}}{{slider.image}}">
+    </ion-slide>
+  </ion-slides>
+  <ion-card>
+    <ion-card-header>
+        Shop By Category
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let categories of categoryList" col-4 col-sm-4 class="cat-grid">
+            <div (click)="open($event, categories)">
+              <img src="{{IMG_URL}}{{categories.image}}">
+              <div class="category">{{categories.name}}</div>
+            </div>
+          </ion-col>
+        </ion-row>      
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

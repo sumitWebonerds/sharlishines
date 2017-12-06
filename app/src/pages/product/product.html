@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Product</ion-title>
+    <cart-count></cart-count> 
+    <!-- <ion-buttons end>
+        <button id="notification-button" (click)="navigateToCart()" ion-button icon-only>
+            <ion-icon name="cart"><ion-badge id="notifications-badge" color="secondary">5</ion-badge> </ion-icon>
+        </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-card>
+        <img src="{{IMG_URL}}{{product.image}}">
+        <ion-item>
+            <h2>{{product.name}}</h2>
+            <p>Price: &#8377; {{product.unit_price}}</p>
+            <p>Package: {{product.package}}</p>
+            <button ion-button block (click) = "addToCart(product.id,IMG_URL+product.image,product.name,product.unit_price,product.package,1)">ADD TO CART</button>
+        </ion-item>
+        <ion-item>
+
+            <span item-left>
+                <button ion-button icon-left clear item-end (click) = "share(product.name,product.image,'www.sahrlishines.com')">
+                <ion-icon name="md-share-alt"></ion-icon>
+                Share
+                </button>
+            </span>
+            <button ion-button icon-left clear item-end (click)="wishlist(product.id,IMG_URL+product.image,product.name,product.unit_price)">
+                <span *ngIf="wishListStatus"><ion-icon name="md-heart" color="danger"></ion-icon></span>
+                <span *ngIf="!wishListStatus"><ion-icon name="md-heart-outline" color="danger"></ion-icon></span>
+                Wishlist
+            </button>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            Details
+        </ion-card-header>
+        <ion-card-content>
+             {{product.description | truncate:3 }} 
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            Benefits &amp; Suggested Use
+        </ion-card-header>
+        <ion-card-content>
+            {{product.description}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

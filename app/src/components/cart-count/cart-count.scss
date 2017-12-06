@@ -1,0 +1,16 @@
+cart-count {
+ #notification-button {
+        position: relative;
+        width: 42px;
+        top: 1px;
+        right: 1px;
+        overflow: visible!important;
+    }
+    #notifications-badge {
+        background-color: #488aff;
+        position: absolute;
+        top: -8px;
+        right: -4px;
+        border-radius: 50%;
+    }
+}
